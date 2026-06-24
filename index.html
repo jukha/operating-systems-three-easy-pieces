@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OSTEP — Chapter Index</title>
+<style>
+  :root{
+    --bg:#0e1116;
+    --panel:#161b22;
+    --line:#2a313c;
+    --text:#dde3ea;
+    --muted:#8b96a5;
+    --mono: "SF Mono", "JetBrains Mono", Consolas, monospace;
+    --serif: "Georgia", "Iowan Old Style", serif;
+
+    --c-intro:#e3b341;
+    --c-virt:#e8763c;
+    --c-conc:#3fa9f5;
+    --c-pers:#5fc97f;
+    --c-sec:#3ea99f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--mono);
+    -webkit-font-smoothing:antialiased;
+  }
+  header{
+    padding:48px 32px 24px;
+    border-bottom:1px solid var(--line);
+    max-width:1100px;
+    margin:0 auto;
+  }
+  header .tag{
+    color:var(--muted);
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+  }
+  header h1{
+    font-family:var(--serif);
+    font-size:clamp(28px,4vw,44px);
+    margin:8px 0 4px;
+    font-weight:600;
+  }
+  header p{
+    color:var(--muted);
+    font-size:14px;
+    margin:0;
+    max-width:560px;
+    line-height:1.5;
+  }
+  main{
+    max-width:1100px;
+    margin:0 auto;
+    padding:32px 32px 80px;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:16px;
+  }
+  @media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .grid{grid-template-columns:1fr;} }
+
+  .col{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+  .col-head{
+    padding:14px 16px;
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:15px;
+    color:#0e1116;
+  }
+  .col[data-c="intro"] .col-head{background:var(--c-intro);}
+  .col[data-c="virt"] .col-head{background:var(--c-virt);}
+  .col[data-c="conc"] .col-head{background:var(--c-conc);}
+  .col[data-c="pers"] .col-head{background:var(--c-pers);}
+  .col[data-c="sec"] .col-head{background:var(--c-sec);}
+
+  .col ul{
+    list-style:none;
+    margin:0;
+    padding:6px 0;
+    flex:1;
+  }
+  .col li{
+    border-bottom:1px solid var(--line);
+  }
+  .col li:last-child{border-bottom:none;}
+  .col a{
+    display:flex;
+    gap:10px;
+    align-items:baseline;
+    padding:9px 16px;
+    color:var(--text);
+    text-decoration:none;
+    font-size:13px;
+    line-height:1.4;
+    transition:background .12s ease, padding-left .12s ease;
+  }
+  .col a:hover{
+    background:rgba(255,255,255,0.045);
+    padding-left:20px;
+  }
+  .col a .num{
+    color:var(--muted);
+    font-size:11px;
+    min-width:16px;
+    flex-shrink:0;
+  }
+  .col a.dialogue, .col a.summary{
+    font-style:italic;
+    color:var(--muted);
+  }
+  .col a .badge{
+    font-size:9px;
+    color:var(--muted);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:1px 5px;
+    margin-left:auto;
+    flex-shrink:0;
+    text-decoration:none;
+  }
+  .col a .badge:hover{ color:var(--text); border-color:var(--muted); }
+
+  footer{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 32px 48px;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.6;
+  }
+  footer a{color:#7fb3e0;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="tag">Operating Systems: Three Easy Pieces</div>
+  <h1>Chapter Index</h1>
+  <p>All links go directly to the official source at pages.cs.wisc.edu/~remzi/OSTEP. Nothing is hosted or mirrored here.</p>
+</header>
+
+<main>
+  <div class="grid">
+
+    <div class="col" data-c="intro">
+      <div class="col-head">Intro</div>
+      <ul>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/dedication.pdf" target="_blank">Dedication</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/preface.pdf" target="_blank">Preface</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/toc.pdf" target="_blank">Table of Contents</a></li>
+        <li><a class="dialogue" href="https://pages.cs.wisc.edu/~remzi/OSTEP/dialogue-threeeasy.pdf" target="_blank"><span class="num">1</span>Dialogue</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/intro.pdf" target="_blank"><span class="num">2</span>Introduction <a class="badge" href="https://github.com/remzi-arpacidusseau/ostep-code/tree/master/intro" target="_blank">code</a></a></li>
+      </ul>
+    </div>
+
+    <div class="col" data-c="virt">
+      <div class="col-head">Virtualization</div>
+      <ul>
+        <li><a class="dialogue" href="https://pages.cs.wisc.edu/~remzi/OSTEP/dialogue-virtualization.pdf" target="_blank"><span class="num">3</span>Dialogue</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-intro.pdf" target="_blank"><span class="num">4</span>Processes</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-api.pdf" target="_blank"><span class="num">5</span>Process API</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-mechanisms.pdf" target="_blank"><span class="num">6</span>Direct Execution</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched.pdf" target="_blank"><span class="num">7</span>CPU Scheduling</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched-mlfq.pdf" target="_blank"><span class="num">8</span>Multi-level Feedback</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched-lottery.pdf" target="_blank"><span class="num">9</span>Lottery Scheduling</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched-multi.pdf" target="_blank"><span class="num">10</span>Multi-CPU Scheduling</a></li>
+        <li><a class="summary" href="https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-dialogue.pdf" target="_blank"><span class="num">11</span>Summary</a></li>
+        <li><a class="dialogue" href="https://pages.cs.wisc.edu/~remzi/OSTEP/dialogue-vm.pdf" target="_blank"><span class="num">12</span>Dialogue</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/vm-intro.pdf" target="_blank"><span class="num">13</span>Address Spaces</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/vm-api.pdf" target="_blank"><span class="num">14</span>Memory API</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/vm-mechanism.pdf" target="_blank"><span class="num">15</span>Address Translation</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/vm-segmentation.pdf" target="_blank"><span class="num">16</span>Segmentation</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/vm-freespace.pdf" target="_blank"><span class="num">17</span>Free Space Mgmt</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/vm-paging.pdf" target="_blank"><span class="num">18</span>Intro to Paging</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/vm-tlbs.pdf" target="_blank"><span class="num">19</span>TLBs</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/vm-smalltables.pdf" target="_blank"><span class="num">20</span>Advanced Page Tables</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/vm-beyondphys.pdf" target="_blank"><span class="num">21</span>Swapping: Mechanisms</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/vm-beyondphys-policy.pdf" target="_blank"><span class="num">22</span>Swapping: Policies</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/vm-complete.pdf" target="_blank"><span class="num">23</span>Complete VM Systems</a></li>
+        <li><a class="summary" href="https://pages.cs.wisc.edu/~remzi/OSTEP/vm-dialogue.pdf" target="_blank"><span class="num">24</span>Summary</a></li>
+      </ul>
+    </div>
+
+    <div class="col" data-c="conc">
+      <div class="col-head">Concurrency</div>
+      <ul>
+        <li><a class="dialogue" href="https://pages.cs.wisc.edu/~remzi/OSTEP/dialogue-concurrency.pdf" target="_blank"><span class="num">25</span>Dialogue</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/threads-intro.pdf" target="_blank"><span class="num">26</span>Concurrency and Threads</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/threads-api.pdf" target="_blank"><span class="num">27</span>Thread API</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf" target="_blank"><span class="num">28</span>Locks</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks-usage.pdf" target="_blank"><span class="num">29</span>Locked Data Structures</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/threads-cv.pdf" target="_blank"><span class="num">30</span>Condition Variables</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/threads-sema.pdf" target="_blank"><span class="num">31</span>Semaphores</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/threads-bugs.pdf" target="_blank"><span class="num">32</span>Concurrency Bugs</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/threads-events.pdf" target="_blank"><span class="num">33</span>Event-based Concurrency</a></li>
+        <li><a class="summary" href="https://pages.cs.wisc.edu/~remzi/OSTEP/threads-dialogue.pdf" target="_blank"><span class="num">34</span>Summary</a></li>
+      </ul>
+    </div>
+
+    <div class="col" data-c="pers">
+      <div class="col-head">Persistence</div>
+      <ul>
+        <li><a class="dialogue" href="https://pages.cs.wisc.edu/~remzi/OSTEP/dialogue-persistence.pdf" target="_blank"><span class="num">35</span>Dialogue</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/file-devices.pdf" target="_blank"><span class="num">36</span>I/O Devices</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/file-disks.pdf" target="_blank"><span class="num">37</span>Hard Disk Drives</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/file-raid.pdf" target="_blank"><span class="num">38</span>RAID</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/file-intro.pdf" target="_blank"><span class="num">39</span>Files and Directories</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/file-implementation.pdf" target="_blank"><span class="num">40</span>File System Impl.</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/file-ffs.pdf" target="_blank"><span class="num">41</span>Fast File System</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/file-journaling.pdf" target="_blank"><span class="num">42</span>FSCK and Journaling</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/file-lfs.pdf" target="_blank"><span class="num">43</span>Log-structured FS</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/file-ssd.pdf" target="_blank"><span class="num">44</span>Flash-based SSDs</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/file-integrity.pdf" target="_blank"><span class="num">45</span>Data Integrity</a></li>
+        <li><a class="summary" href="https://pages.cs.wisc.edu/~remzi/OSTEP/file-dialogue.pdf" target="_blank"><span class="num">46</span>Summary</a></li>
+        <li><a class="dialogue" href="https://pages.cs.wisc.edu/~remzi/OSTEP/dialogue-distribution.pdf" target="_blank"><span class="num">47</span>Dialogue</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/dist-intro.pdf" target="_blank"><span class="num">48</span>Distributed Systems</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/dist-nfs.pdf" target="_blank"><span class="num">49</span>NFS</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/dist-afs.pdf" target="_blank"><span class="num">50</span>AFS</a></li>
+        <li><a class="summary" href="https://pages.cs.wisc.edu/~remzi/OSTEP/dist-dialogue.pdf" target="_blank"><span class="num">51</span>Summary</a></li>
+      </ul>
+    </div>
+
+    <div class="col" data-c="sec">
+      <div class="col-head">Security</div>
+      <ul>
+        <li><a class="dialogue" href="https://pages.cs.wisc.edu/~remzi/OSTEP/dialogue-security.pdf" target="_blank"><span class="num">52</span>Dialogue</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/security-intro.pdf" target="_blank"><span class="num">53</span>Intro Security</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/security-authentication.pdf" target="_blank"><span class="num">54</span>Authentication</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/security-access.pdf" target="_blank"><span class="num">55</span>Access Control</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/security-crypto.pdf" target="_blank"><span class="num">56</span>Cryptography</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/security-distributed.pdf" target="_blank"><span class="num">57</span>Distributed Security</a></li>
+        <li style="border-top:1px solid var(--line); margin-top:4px;"><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/dialogue-vmm.pdf" target="_blank" class="dialogue" style="padding-top:14px;">Appendix · Dialogue</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/vmm-intro.pdf" target="_blank">Virtual Machines</a></li>
+        <li><a class="dialogue" href="https://pages.cs.wisc.edu/~remzi/OSTEP/dialogue-monitors.pdf" target="_blank">Dialogue</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/threads-monitors.pdf" target="_blank">Monitors</a></li>
+        <li><a class="dialogue" href="https://pages.cs.wisc.edu/~remzi/OSTEP/dialogue-labs.pdf" target="_blank">Dialogue</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/lab-tutorial.pdf" target="_blank">Lab Tutorial</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/lab-projects-systems.pdf" target="_blank">Systems Labs</a></li>
+        <li><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/lab-projects-xv6.pdf" target="_blank">xv6 Labs</a></li>
+      </ul>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  Source: Arpaci-Dusseau, <em>Operating Systems: Three Easy Pieces</em>, v1.10 — <a href="https://ostep.org" target="_blank">ostep.org</a>. All PDFs load directly from the official server; this page is just a tidier index.
+</footer>
+
+</body>
+</html>
