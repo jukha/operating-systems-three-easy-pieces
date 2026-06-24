@@ -2,7 +2,7 @@
 
 A clean, single-page index of all chapter links for **Operating Systems: Three Easy Pieces (OSTEP)** by Remzi H. Arpaci-Dusseau and Andrea C. Arpaci-Dusseau.
 
-🔗 **Live page:** https://YOUR_USERNAME.github.io/ostep-index/
+🔗 **Live page:** https://jukha.github.io/operating-systems-three-easy-pieces/
 
 ## Why this exists
 
